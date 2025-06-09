@@ -63,13 +63,19 @@ const ChatWidget = () => {
           </div>
 
           <div style={styles.inputContainer}>
-            <input
+            <textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Type a message..."
-              style={styles.input}
-              onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
+              style={{ ...styles.input, height: '80px', resize: 'none' }}  // Adjust height and style for textarea
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                  e.preventDefault();  // Prevent newline on Enter (without Shift)
+                  sendMessage();
+                }
+              }}
             />
+
             <button onClick={sendMessage} style={styles.sendBtn}>Send</button>
           </div>
         </div>
