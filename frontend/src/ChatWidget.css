@@ -1,0 +1,40 @@
+.chat-container {
+  max-width: 400px;
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.messages {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.user {
+  text-align: right;
+  margin: 5px 0;
+  color: blue;
+}
+
+.assistant {
+  text-align: left;
+  margin: 5px 0;
+  color: green;
+}
+
+.input-area {
+  display: flex;
+  gap: 5px;
+}
+
+input {
+  flex-grow: 1;
+  padding: 6px;
+}
+
+button {
+  padding: 6px 12px;
+}
